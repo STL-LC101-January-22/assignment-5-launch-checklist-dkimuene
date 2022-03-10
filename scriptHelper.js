@@ -42,12 +42,16 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     copilotStatus.innerText =`Co-pilot ${copilot} is ready for launch`;
 
     if(fuelLevel < 10000){
+        launchStatus.innerText =`Shuttle not ready for launch`;
+        launchStatus.style.color = "rgb(199, 37, 78)";
         list.style.visibility = "visible";
         fuelStatus.innerText =`Fuel level to low for launch`;
         ready = false;
 
     }
     if(cargoLevel > 10000){
+        launchStatus.innerText =`Shuttle not ready for launch`;
+        launchStatus.style.color = "rgb(199, 37, 78)";
         list.style.visibility = "visible";
         cargoStatus.innerText =`Cargo mass too heavy for launch`;
         ready = false;
@@ -57,12 +61,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         launchStatus.innerText =`Shuttle is ready for launch`;
         launchStatus.style.color = "green";
         list.style.visibility = "visible";
-    }else {
-        launchStatus.innerText =`Shuttle not ready for launch`;
-        launchStatus.style.color = "red";
-
     }
-   
 }
 
 async function myFetch() {

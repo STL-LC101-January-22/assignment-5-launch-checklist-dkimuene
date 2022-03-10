@@ -95,18 +95,22 @@ window.addEventListener("load", function(e) {
         let fuelStatus = document.getElementById("fuelStatus");
         let cargoStatus = document.getElementById("cargoStatus");
         let launchStatus = document.getElementById("launchStatus");
-        
+
         let ready = true;
         pilotStatus.innerText =`Pilot ${pilot} is ready for launch`;
         copilotStatus.innerText =`Co-pilot ${copilot} is ready for launch`;
     
         if(fuelLevel < 10000){
+            launchStatus.innerText =`Shuttle not ready for launch`;
+            launchStatus.style.color = "rgb(199, 37, 78)";
             list.style.visibility = "visible";
             fuelStatus.innerText =`Fuel level to low for launch`;
             ready = false;
 
         }
         if(cargoLevel > 10000){
+            launchStatus.innerText =`Shuttle not ready for launch`;
+            launchStatus.style.color = "rgb(199, 37, 78)";
             list.style.visibility = "visible";
             cargoStatus.innerText =`Cargo mass too heavy for launch`;
             ready = false;
@@ -116,12 +120,7 @@ window.addEventListener("load", function(e) {
             launchStatus.innerText =`Shuttle is ready for launch`;
             launchStatus.style.color = "green";
             list.style.visibility = "visible";
-        }else {
-            launchStatus.innerText =`Shuttle not ready for launch`;
-            launchStatus.style.color = "red";
-
         }
-       
     }
 
     async function myFetch() {
