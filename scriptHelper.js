@@ -14,6 +14,8 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                         <img src="${imageUrl}">
     
     `
+    
+    
  }
 
 function validateInput(testInput) {
@@ -91,3 +93,5 @@ module.exports = {
 // module.exports.formSubmission = formSubmission;
 // module.exports.pickPlanet = pickPlanet; 
 // module.exports.myFetch = myFetch;
+
+
