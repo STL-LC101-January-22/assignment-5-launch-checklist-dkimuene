@@ -10,13 +10,14 @@ window.addEventListener("load", function(e) {
     let cargoInput = document.querySelector("input[name=cargoMass]");
     let submitBtn = document.getElementById("formSubmit");
     let list = document.getElementById("faultyItems");
-    let pilotStatus = document.getElementById("pilotStatus");
-    let copilotStatus = document.getElementById("copilotStatus");
-    let fuelStatus = document.getElementById("fuelStatus");
-    let cargoStatus = document.getElementById("cargoStatus");
-    let launchStatus = document.getElementById("launchStatus");
+    // let pilotStatus = document.getElementById("pilotStatus");
+    // let copilotStatus = document.getElementById("copilotStatus");
+    // let fuelStatus = document.getElementById("fuelStatus");
+    // let cargoStatus = document.getElementById("cargoStatus");
+    // let launchStatus = document.getElementById("launchStatus");
     let mission = document.getElementById("missionTarget");
-    
+    list.style.visibility = "hidden"
+
     submitBtn.addEventListener("click", (event) =>{
         event.preventDefault();
         let proceed = true;
@@ -89,6 +90,12 @@ window.addEventListener("load", function(e) {
     }
 
     function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+        let pilotStatus = document.getElementById("pilotStatus");   
+        let copilotStatus = document.getElementById("copilotStatus");
+        let fuelStatus = document.getElementById("fuelStatus");
+        let cargoStatus = document.getElementById("cargoStatus");
+        let launchStatus = document.getElementById("launchStatus");
+        
         let ready = true;
         pilotStatus.innerText =`Pilot ${pilot} is ready for launch`;
         copilotStatus.innerText =`Co-pilot ${copilot} is ready for launch`;
