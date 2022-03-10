@@ -31,6 +31,12 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    let pilotStatus = document.getElementById("pilotStatus");   
+    let copilotStatus = document.getElementById("copilotStatus");
+    let fuelStatus = document.getElementById("fuelStatus");
+    let cargoStatus = document.getElementById("cargoStatus");
+    let launchStatus = document.getElementById("launchStatus");
+
     let ready = true;
     pilotStatus.innerText =`Pilot ${pilot} is ready for launch`;
     copilotStatus.innerText =`Co-pilot ${copilot} is ready for launch`;
