@@ -1,7 +1,5 @@
 // Write your JavaScript code here!
 
-// import funcs from './scriptHelper.js';
-
 window.addEventListener("load", function(e) {
     let form = document.querySelector("form");
     let pilotInput = document.querySelector("input[name=pilotName]");
@@ -146,3 +144,5 @@ window.addEventListener("load", function(e) {
     ]
     
 });
+
+// var funcs = require('./scriptHelper.js');

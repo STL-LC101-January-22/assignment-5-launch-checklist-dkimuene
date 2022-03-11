@@ -38,6 +38,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let launchStatus = document.getElementById("launchStatus");
 
     let ready = true;
+    
     pilotStatus.innerText =`Pilot ${pilot} is ready for launch`;
     copilotStatus.innerText =`Co-pilot ${copilot} is ready for launch`;
 
@@ -86,17 +87,18 @@ function pickPlanet(planets) {
     return planets[index];
 }
 
-module.exports = {
-    addDestinationInfo: addDestinationInfo,
-    validateInput: validateInput,
-    formSubmission: formSubmission,
-    pickPlanet: pickPlanet, 
-    myFetch: myFetch
-}
-// module.exports.addDestinationInfo = addDestinationInfo;
-// module.exports.validateInput = validateInput;
-// module.exports.formSubmission = formSubmission;
-// module.exports.pickPlanet = pickPlanet; 
-// module.exports.myFetch = myFetch;
+// module.exports = {
+//     addDestinationInfo: addDestinationInfo,
+//     validateInput: validateInput,
+//     formSubmission: formSubmission,
+//     pickPlanet: pickPlanet, 
+//     myFetch: myFetch
+// }
+
+module.exports.addDestinationInfo = addDestinationInfo;
+module.exports.validateInput = validateInput;
+module.exports.formSubmission = formSubmission;
+module.exports.pickPlanet = pickPlanet; 
+module.exports.myFetch = myFetch;
 
 
