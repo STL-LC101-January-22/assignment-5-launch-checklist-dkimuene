@@ -119,7 +119,7 @@ window.addEventListener("load", function(e) {
             launchStatus.style.color = "rgb(65, 159, 106)";
             list.style.visibility = "visible";
         }else {
-            launchStatus.innerText =`Shuttle is ready for launch`;
+            launchStatus.innerText =`Awaiting Information Before Launch`;
         }
     }
 
