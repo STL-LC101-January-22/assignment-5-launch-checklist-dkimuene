@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-// const funcs = require('./scriptHelper.js');
+// import funcs from './scriptHelper.js';
 
 window.addEventListener("load", function(e) {
     let form = document.querySelector("form");
@@ -10,16 +10,10 @@ window.addEventListener("load", function(e) {
     let cargoInput = document.querySelector("input[name=cargoMass]");
     let submitBtn = document.getElementById("formSubmit");
     let list = document.getElementById("faultyItems");
-    // let pilotStatus = document.getElementById("pilotStatus");
-    // let copilotStatus = document.getElementById("copilotStatus");
-    // let fuelStatus = document.getElementById("fuelStatus");
-    // let cargoStatus = document.getElementById("cargoStatus");
-    // let launchStatus = document.getElementById("launchStatus");
     let mission = document.getElementById("missionTarget");
     list.style.visibility = "hidden"
 
     submitBtn.addEventListener("click", (event) =>{
-        // event.preventDefault();
         let proceed = true;
         for(let i = 0; i < inputs.length; i++){
             let input = inputs[i]
@@ -43,6 +37,7 @@ window.addEventListener("load", function(e) {
         if(proceed){
             formSubmission(window.document, list, inputs[0].value, inputs[1].value, inputs[2].value,inputs[3].value)
         }
+        event.preventDefault();
     })
 
     let listedPlanets;
@@ -60,7 +55,7 @@ window.addEventListener("load", function(e) {
 
     function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
         // Here is the HTML formatting for our mission target div.
-        document.innerHTML = `<h2>Mission Destination</h2>
+        mission.innerHTML = `<h2>Mission Destination</h2>
                                 <ol>
                                     <li>Name: ${name}</li>
                                     <li>Diameter: ${diameter}</li>
@@ -70,9 +65,7 @@ window.addEventListener("load", function(e) {
                                 </ol>
                             <img src="${imageUrl}">
         
-        `
-        
-        
+        ` 
      }
 
     function validateInput(testInput) {
@@ -101,25 +94,32 @@ window.addEventListener("load", function(e) {
         copilotStatus.innerText =`Co-pilot ${copilot} is ready for launch`;
     
         if(fuelLevel < 10000){
+            console.log(fuelLevel);
             launchStatus.innerText =`Shuttle not ready for launch`;
             launchStatus.style.color = "rgb(199, 37, 78)";
             list.style.visibility = "visible";
             fuelStatus.innerText =`Fuel level to low for launch`;
             ready = false;
-
+        }else {
+            fuelStatus.innerText =`Fuel level high enough for launch`;
         }
         if(cargoLevel > 10000){
+            console.log(cargoLevel);
             launchStatus.innerText =`Shuttle not ready for launch`;
             launchStatus.style.color = "rgb(199, 37, 78)";
             list.style.visibility = "visible";
             cargoStatus.innerText =`Cargo mass too heavy for launch`;
             ready = false;
+        }else {
+            cargoStatus.innerText =`Cargo mass low enough for launch`;
         }
         
         if(ready){
             launchStatus.innerText =`Shuttle is ready for launch`;
-            launchStatus.style.color = "green";
+            launchStatus.style.color = "rgb(65, 159, 106)";
             list.style.visibility = "visible";
+        }else {
+            launchStatus.innerText =`Shuttle is ready for launch`;
         }
     }
 
