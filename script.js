@@ -19,7 +19,7 @@ window.addEventListener("load", function(e) {
     list.style.visibility = "hidden"
 
     submitBtn.addEventListener("click", (event) =>{
-        event.preventDefault();
+        // event.preventDefault();
         let proceed = true;
         for(let i = 0; i < inputs.length; i++){
             let input = inputs[i]
