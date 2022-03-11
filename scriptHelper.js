@@ -3,7 +3,7 @@ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
-    document.innerHTML = `<h2>Mission Destination</h2>
+    mission.innerHTML = `<h2>Mission Destination</h2>
                             <ol>
                                 <li>Name: ${name}</li>
                                 <li>Diameter: ${diameter}</li>
@@ -13,9 +13,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                             </ol>
                         <img src="${imageUrl}">
     
-    `
-    
-    
+    ` 
  }
 
 function validateInput(testInput) {
@@ -44,25 +42,32 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     copilotStatus.innerText =`Co-pilot ${copilot} is ready for launch`;
 
     if(fuelLevel < 10000){
+        console.log(fuelLevel);
         launchStatus.innerText =`Shuttle not ready for launch`;
         launchStatus.style.color = "rgb(199, 37, 78)";
         list.style.visibility = "visible";
         fuelStatus.innerText =`Fuel level to low for launch`;
         ready = false;
-
+    }else {
+        fuelStatus.innerText =`Fuel level high enough for launch`;
     }
     if(cargoLevel > 10000){
+        console.log(cargoLevel);
         launchStatus.innerText =`Shuttle not ready for launch`;
         launchStatus.style.color = "rgb(199, 37, 78)";
         list.style.visibility = "visible";
         cargoStatus.innerText =`Cargo mass too heavy for launch`;
         ready = false;
+    }else {
+        cargoStatus.innerText =`Cargo mass low enough for launch`;
     }
     
     if(ready){
         launchStatus.innerText =`Shuttle is ready for launch`;
         launchStatus.style.color = "rgb(65, 159, 106)";
         list.style.visibility = "visible";
+    }else {
+        launchStatus.innerText =`Awaiting Information Before Launch`;
     }
 }
 
