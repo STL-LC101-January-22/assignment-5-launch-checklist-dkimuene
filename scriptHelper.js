@@ -3,6 +3,7 @@ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
+    let mission = document.getElementById("missionTarget");
     mission.innerHTML = `<h2>Mission Destination</h2>
                             <ol>
                                 <li>Name: ${name}</li>
@@ -67,8 +68,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         launchStatus.innerText =`Shuttle is ready for launch`;
         launchStatus.style.color = "rgb(65, 159, 106)";
         list.style.visibility = "visible";
-    }else {
-        launchStatus.innerText =`Awaiting Information Before Launch`;
     }
 }
 
