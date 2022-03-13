@@ -143,6 +143,6 @@ window.addEventListener("load", function(e) {
         cargoInput
     ]
     
+    console.log(pilotStatus.textContent)
 });
-
 // var funcs = require('./scriptHelper.js');
